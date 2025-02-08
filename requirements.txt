@@ -2,3 +2,4 @@ flask
 pandas
 selenium
 openpyxl
+gunicorn
