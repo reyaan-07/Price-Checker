@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .please-wait {
+            display: none;
+            color: #ff5722;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function showPleaseWait() {
+            document.getElementById('please-wait').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload File</h1>
+        <form method="post" enctype="multipart/form-data" onsubmit="showPleaseWait()">
+            <input type="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+        <div id="please-wait" class="please-wait">Please wait while your file is being processed...</div>
+    </div>
+</body>
+</html>
